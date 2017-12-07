@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Techbar-数媒技最牛逼的技术吧</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script type="text/javascript" src="../js/index.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+	<header class="w">
+	   <img src="../images/logo.png">
+       <div class="form">
+           <input type="text" placeholder="PHP">
+           <button><i></i></button>
+       </div>
+	   <div class="lr">
+           <a class="fl" href="javascript:;">登陆</a>
+           <a class="fr" href="javascript:;">注册</a>
+       </div>
+	</header>
+    <!-- 导航条 -->
+    <nav class="w">
+    	<ul>
+    		<li><a href="javascript:;">前端开发</a></li>
+    		<li><a href="javascript:;">后端开发</a></li>
+    		<li><a href="javascript:;">ios</a></li>
+    		<li><a href="javascript:;">android</a></li>
+    		<li><a href="javascript:;">工具</a></li>
+    	</ul>
+    </nav>
+    <!-- 轮播图 -->
+    <div class="roast-pic w">
+         <nav id="pict">
+           <ul id="index">
+               <li class="on"></li>
+               <li></li>
+               <li></li>
+               <li></li>
+            </ul>
+            <ul id="img">
+                   <li class="opa-on"><a href="javascript:;"><img src="../images/roast1.png"></a></li>
+                   <li><a href="javascript:;"><img src="../images/roast2.png"></a></li>
+                   <li><a href="javascript:;"><img src="../images/roast3.png"></a></li>
+                   <li><a href="javascript:;"><img src="../images/roast4.png"></a></li>
+            </ul>
+            <p id="prev" class="arrow">&lt;</p>
+            <p id="next" class="arrow">&gt;</p>
+        </nav>
+    </div>
+    <!-- 文章 -->
+    <div class="articles">
+         <div class="art1">
+              <a href="javascript:;">
+                 <h2>阿里智能对话交互技术实践与创新</h2>
+                 <p>过去 20 多年，互联网及移动互联网将人类带到了一个全新的时代，如果用一个词来总结和概括这个时代的话，「连接」这个词再合适不过。这个时代主要建立了四种连接：第一，人和商品的连接；第二，人和人的连接；第三，人和信息的连接；第四，人和设备的连接。「连接」本身不是目的，它只是为「交互」建立了通道。在人机交互（Human-Computer Interaction）中，人通过输入设备给机器输入相关信号，这些信号包括语音、文本、图像、触控等中的一种模态或多种模态，机器通过输出或显示设备给人提供相关反馈信号。「连接」为「交互」双方架起了桥梁。「交互」的演进方向是更加自然、高效、友好和智能。对人来说，采用自然语言与机器进行智能对话交互是最自然的交互方式之一，但这条路上充满了各种挑战。如何让机器理解人类复杂的自然语言？如何对用户的提问给出精准的答案而不是一堆候选？如何更加友好地与用户闲聊而不是答非所问？如何管理复杂的多轮对话状态和对话上下文？在阿里巴巴，我们从 2014 年初开始对智能对话交互进行探索和实践创新，研发成果逐步大规模应用在了智能客服（针对阿里巴巴生态内部企业的阿里小蜜、针对阿里零售平台上的千万商家的店小蜜，以及针对阿里之外企业及政府的云小蜜等）和各种设备（如 YunOS 手机、天猫魔盒、互联网汽车等）上。
+                 </p>
+              </a>
+         </div>
+         <div class="art1">
+            <a href="javascript:;">
+                 <h2>Android的滑动分析</h2>
+                 <p>滑动应该可以说是Android中最常见的一种视觉效果，也是View编写中的关键，本篇文章就来分析一下Android中滑动的实现方式。滑动通常分为计算位移以及执行滑动两部分，本篇将会涉及这两个方面。对于计算部分，通常有三种方式，1：阻塞；2：通过各种Scroller；3：属性动画。其中1和2其实是差不多的，因为要省事的话，都会需要Scroller来执行计算任务，只是两者的触发时机不一样，这一点会在后面分析。对于滑动的执行，就只有两种方式：改变子view本身的位置和改变父View的mScrollY/mScrollX。看过源码的同学大概都会知道，这两个是View类中的属性，它们是来干嘛的呢？就是来改变View的视图位置。只要看一下View类中的一个方法就知道这两个属性是干嘛的：
+                 </p>
+              </a>
+         </div>
+         <div class="art1">
+              <a href="javascript:;">
+                 <h2>不同内核浏览器之间的差异以及浏览器渲染</h2>
+                 <p>1、什么叫浏览器内核？ 浏览器最重要或者说核心的部分是“Rendering Engine”，可大概译为“渲染引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释（如标准通用标记语言下的一个应用HTML、JavaScript）并渲染（显示）网页。目前，主流的内核分为： Trident(IE、傲游、世界之窗浏览器、Avant、腾讯TT、Netscape、NetCaptor、Sleipnir、GOSURF、GreenBrowser和KKman等) Gecko(Firefox、Netscape6至9) Webkit(Safari内核,Chrome内核原型,开源) Presto内核：目前只有Opera浏览器采用该内核2、什么叫浏览器渲染？网页不仅应该被快速加载，同时还应该流畅运行，比如快速响应的交互，如丝般顺滑的动画等。大多数设备的刷新频率是60次/秒，也就说是浏览器对每一帧画面的渲染工作要在16ms内完成，超出这个时间，页面的渲染就会出现卡顿现象，影响用户体验。为了保证页面的渲染效果，需要充分了解浏览器是如何处理HTML/JavaScript/CSS的。
+                 </p>
+              </a>
+         </div>
+    </div>
+    <!-- 分页 -->
+    <div class="pag w">
+        <ul>
+        	<li>1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        	<li>5</li>
+        	<li>下一页</li>
+        </ul>   
+    </div>
+    <!-- 页脚 -->
+    <footer>    
+          <div class="w copyright">
+            <p>
+                <a href="javascript:;">关于我们</a>
+                <span>|</span>
+                <a href="javascript:;">联系我们</a>
+                <span>|</span>
+                <a href="javascript:;">友情链接</a>
+                <span>|</span>
+                <a href="javascript:;">技术交流</a>
+                <span>|</span>
+                <a href="javascript:;">常见问题</a>
+                <span>|</span>
+                <a href="javascript:;">意见反馈</a>
+                <span>|</span>
+                <a href="javascript:;">资源分享</a>
+            </p>            
+            <p>Copyright © 2017  Techblog 版权所有<span>|</span>用户维权热线：4006068833</p>           
+          </div>
+    </footer>
+</body>
+</html>

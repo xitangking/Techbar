@@ -1,0 +1,53 @@
+/*版心*/
+img{
+	vertical-align: top;
+}
+.w{
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,
+input,legend,li,ol,p,pre,td,textarea,th,ul{
+	margin: 0;
+	padding: 0;
+}
+input,button{
+	border:0;
+	outline: none;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+	font-size: 16px;
+}
+a:hover{
+	color: #c81623;
+}
+body{
+	font-size: 14px;
+	color: #000;
+	font-family: 'Microsoft YaHei';
+	background-color: #f6f6f6;
+}
+/*声明字体*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?x4vhwc');
+  src:  url('../fonts/icomoon.eot?x4vhwc#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?x4vhwc') format('truetype'),
+    url('../fonts/icomoon.woff?x4vhwc') format('woff'),
+    url('../fonts/icomoon.svg?x4vhwc#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*浮动公共类*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}

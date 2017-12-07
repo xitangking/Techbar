@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>不同内核浏览器之间的差异以及浏览器渲染</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>	
+	<script type="text/javascript" src="../js/index.js"></script>	
+</head>
+<body>
+ <!-- 头部 -->
+ <header class="w">
+	<img src="../images/logo.png">
+    <div class="form">
+        <input type="text" placeholder="PHP">
+        <button><i></i></button>
+    </div>
+	<div class="lr">
+        <a class="fl" href="javascript:;">登陆</a>
+        <a class="fr" href="javascript:;">注册</a>
+    </div>
+ </header>
+ <!-- 文章内容	 -->
+ <div class="w">
+   <div class="art fl">
+       <div class="art-title">
+            <h1>不同内核浏览器之间的差异以及浏览器渲染</h1>
+            <p>
+              <span class="original">转载</span>
+              <span class="time">2017年11月14日 19:34:25</span>
+              <span class="tag">标签：<a href="javascript:;">浏览器</a> / <a href="javascript:;">内核</a></span>
+            </p>
+       </div>
+       <div class="art-con">
+           <div class="art-con1" id="one">
+              <h2>一、什么叫浏览器内核？</h2>
+              <span>浏览器最重要或者说核心的部分是“Rendering Engine”，可大概译为“渲染引擎”，不过我们一般习惯将   之称为“浏览器内核”。负责对网页语法的解释（如标准通用标记语言下的一个应用HTML、JavaScript）并   渲染（显示）网页。
+              </span>
+              <span>目前，主流的内核分为：<br> 
+                    Trident(IE、傲游、世界之窗浏览器、Avant、腾讯TT、Netscape    8、NetCaptor、Sleipnir、GOSURF、GreenBrowser和KKman等) <br>
+                    Gecko(Firefox、Netscape6至9) <br>
+                    Webkit(Safari内核,Chrome内核原型,开源) <br>
+                    Presto内核：目前只有Opera浏览器采用该内核
+              </span>
+           </div>
+         <div class="art-con1" id="two">
+              <h2>二、什么叫浏览器渲染？ </h2>
+              <span> 网页不仅应该被快速加载，同时还应该流畅运行，比如快速响应的交互，如丝般顺滑的动画等。大多数设备的刷新频率是60次/秒，也就说是浏览器对每一帧画面的渲染工作要在16ms内完成，超出这个时间，页面的渲染就会出现卡顿现象，影响用户体验。为了保证页面的渲染效果，需要充分了解浏览器是如何处理HTML/JavaScript/CSS的。
+              </span>
+              <span>
+              <h3>1、用户输入网址，浏览器向服务器发送请求，服务器返回html文件 </h3>
+              <h3>2、浏览器加载html文件，发现<head>标签内<link>引用外部css文件 </h3> 
+              <h3>3、浏览器发出css请求，服务器返回css文件 </h3>
+              <h3>4、浏览器继续载入html中< body >部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</h3>
+              <h3>5、浏览器在代码中发现一个<img>标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码: </h3>
+              <h3>6、服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</h3>
+              </span>
+           </div>
+           <div class="art-con1" id="three">
+              <h2>三、为什么渲染慢？</h2>
+              <span>因为浏览器要花时间、花精力去渲染，尤其是当它发现某个部分发生了点变化影响了布局，需要倒回去重新渲染，内行称这个回退的过程叫reflow。 
+              </span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reflow几乎是无法避免的。现在界面上流行的一些效果，比如树状目录的折叠、展开（实质上是元素的显示与隐藏）等，都将引起浏览器的 reflow。鼠标滑过、点击……只要这些行为引起了页面上某些元素的占位面积、定位方式、边距等属性的变化，都会引起它内部、周围甚至整个页面的重新渲染。通常我们都无法预估浏览器到底会reflow哪一部分的代码，它们都彼此相互影响着。 <br> 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reflow问题是可以优化的，我们可以尽量减少不必要的reflow。比如开头的例子中的<img>图片载入问题，这其实就是一个可以避免的reflow——给图片设置宽度和高度就可以了。这样浏览器就知道了图片的占位面积，在载入图片前就预留好了位置。 <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;另外，有个和reflow看上去差不多的术语：repaint，中文叫重绘。 如果只是改变某个元素的背景色、文字颜色、边框颜色等等不影响它周围或内部布局的属性，将只会引起浏览器repaint。repaint的速度明显快于 reflow（在IE下需要换一下说法，reflow要比repaint 更缓慢）。 <br>
+              </span>
+           </div>
+           <div class="art-con1" id="four">
+              <h2>四、渲染流程</h2>
+              <span>
+              </span>
+              <span>
+              <h3>1、JavaScript：JavaScript实现动画效果，DOM元素操作等。 </h3>
+              <h3>2、Style（计算样式）：确定每个DOM元素应该应用什么CSS规则。</h3>
+              <h3>3、Layout（布局）：计算每个DOM元素在最终屏幕上显示的大小和位置。由于web页面的元素布局是相对的，所以其中任意一个元素的位置发生变化，都会联动的引起其他元素发生变化，这个过程叫reflow。  </h3>
+              <h3>4、Paint（绘制）：在多个层上绘制DOM元素的的文字、颜色、图像、边框和阴影等。</h3>
+              <h3>5、Composite（渲染层合并）：按照合理的顺序合并图层然后显示到屏幕上。 ps:Layout与Paint步骤是可以避免的</h3>
+              </span>
+           </div>
+           <hr>
+       </div>
+       <!-- 评论 -->
+       <!-- <form method="post" action="" class="evaluate">
+          <input type="text" placeholder="来说两句吧...">
+          <button name="send" id="send" type="submit">评论</button>
+       </form> -->
+       <div class="text-box1">
+          <textarea class="comment" autocomplete="off">来说两句吧...</textarea>
+          <button class="btn">评 论</button>
+          <span class="word"><span class="length">0</span>/140</span>
+       </div>
+       <div class="evaluate1">最新评价</div>
+        <div id="list">
+          <div class="box clearfix">
+            <div class="user">
+               <img class="head" src="../images/user1.jpg"/>
+               <span class="user-name">GB</span>
+            </div>
+            <div class="content">
+                <div class="main">
+                    <p class="txt">
+                        博主写的我都会，博主没写的我也会
+                    </p>
+                    <span class="time1">2017-12-6 19:52 </span>
+                </div>
+                <div class="info clearfix">                   
+                    <a class="praise" href="javascript:;">赞</a>
+                </div>
+                <div class="praises-total" total="4" style="display: block;">4个人觉得很赞</div>
+                <div class="comment-list">
+                    <div class="comment-box clearfix" user="self">
+                        <img class="myhead" src="../images/user2.jpg"/>
+                        <div class="comment-content">
+                            <p class="comment-text"><span class="user-name1">我：</span>吹水。</p>
+                            <p class="comment-time">
+                                2017-12-6 20:02
+                                <a href="javascript:;" class="comment-praise" total="1" my="0" style="display: inline-block">1 赞</a>
+                                <a href="javascript:;" class="comment-operate">删除</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box">
+                    <textarea class="comment" autocomplete="off">评论…</textarea>
+                    <button class="btn">回 复</button>
+                    <span class="word"><span class="length">0</span>/140</span>
+                </div>
+              </div>
+          </div>
+          <div class="box clearfix">
+            <div class="user">
+               <img class="head" src="../images/user3.jpg"/>
+               <span class="user-name">嚴脂红.*</span>
+            </div>
+            <div class="content">
+                <div class="main">
+                    <p class="txt">默默看楼上装逼。</p>
+                    <span class="time1">2017-12-6 20:20 </span>                       
+                </div>
+                <div class="info clearfix">
+                    <a class="praise" href="javascript:;">赞</a>
+                </div>
+                <div class="praises-total" total="0" style="display: none;"></div>
+                <div class="comment-list">
+                </div>
+               <div class="text-box">
+                    <textarea class="comment" autocomplete="off">评论…</textarea>
+                    <button class="btn">回 复</button>
+                    <span class="word"><span class="length">0</span>/140</span>
+                </div>
+            </div>
+         </div>
+      </div>  
+   </div>
+   <div class="tag1 fr">
+       <p>标题</p>
+       <p><a href="#one">一、什么叫浏览器内核？</a><br>
+          <a href="#two">二、什么叫浏览器渲染？</a><br>
+          <a href="#three">三、为什么渲染慢？</a><br>
+          <a href="#four">四、渲染流程</a>
+       </p>
+   </div>
+ </div>
+</body>
+</html>
